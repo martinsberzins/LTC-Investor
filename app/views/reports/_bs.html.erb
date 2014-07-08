@@ -1,0 +1,88 @@
+
+		<tr>
+			<td><h5>Balance Sheet</h5></td>
+			<% @reports.each do |r|%>
+            	<td></td>
+          	<%end%>
+		</tr>
+
+		<tr>
+			<td>Total assets </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.assets) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Cash </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.cash) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Current assets </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.curr_assets) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Goodwill</td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.goodwill) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Fixed assets</td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.fixed_assets) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Other assets</td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.other_assets) %> </td>
+          	<%end%>
+		</tr>
+		<%= render :partial => "seperate"%>
+
+		<tr>
+			<td>Total liabilities and equity</td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.assets) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Current debt </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.curr_debt) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Current liabilities </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.curr_liab) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Long term debt </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.lt_debt) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Other liabilities </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.other_liabilities)%> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Total liabilities </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.total_liabilities) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Equity </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.equity) %> </td>
+          	<%end%>
+		</tr>

@@ -1,0 +1,30 @@
+<h1>Reports</h1>
+
+<h1> <%= @post.name%> </h1>
+</br>
+
+<table class="table table-condensed">
+	<tbody>
+		<%= render :partial => "general"%>
+		<%= render :partial => "seperate"%>
+
+		<%= render :partial => "pl"%>
+		<%= render :partial => "seperate"%>
+
+		<%= render :partial => "bs"%>
+		<%= render :partial => "seperate"%>
+
+		<%= render :partial => "our_model"%>
+		<%= render :partial => "seperate"%>
+
+		<%= render :partial => "update"%>
+	</tbody>
+</table>
+
+<div class="row" id="div_add_new">
+  <p><%=link_to "Create New Report", new_post_report_path(@post) %></p>
+</div>
+
+
+
+		

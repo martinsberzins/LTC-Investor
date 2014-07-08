@@ -1,0 +1,38 @@
+<h1> Edit Company Information</h1>
+
+<%= form_for @posts do |f| %>
+<% if @posts.errors.any? %>
+      <h2> Errors: </h2>
+        <ul>
+          <% @posts.errors.full_messages.each do |message|%>
+            <li><%= message %> </li>
+          <%end%>
+        </ul>
+  <%end%>
+
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :ticker %><br/>
+    <%= f.text_field :ticker %>
+  </p>
+  <p>
+    <%= f.label :description %><br/>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :region %><br/>
+    <%= f.text_field :region %>
+  </p>
+  <p>
+    <%= f.label :WEB %><br/>
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.label :active %><br/>
+    <%= f.check_box :active %>
+  </p>
+  <p><%= f.submit "Update Information" %></p>
+<%end%>

@@ -1,0 +1,117 @@
+<%= form_for [@post, @report] do |f| %>
+    <% if @report.errors.any? %>
+      <h2> Errors: </h2>
+        <ul>
+          <% @report.errors.full_messages.each do |message|%>
+            <li><%= message %> </li>
+          <%end%>
+        </ul>
+  <%end%>
+  <p>
+  <%= f.label "Name: " %>
+  <%= f.label @report.post.name %><br/>
+  </p>
+  <p>
+    <%= f.label "Qurter" %><br/>
+    <%= f.text_field :quarter %>
+  </p>
+  <p>
+    <%= f.label "Date of report" %><br/>
+    <%= f.date_field :date_of_report %>
+  </p>
+  <p>
+    <%= f.label "Number of units" %><br/>
+    <%= f.text_field :units %>
+  </p>
+  <p>
+    <%= f.label "Number of shares outstanding" %><br/>
+    <%= f.text_field :shares_outstanding %>
+  </p>
+    <p>
+    <%= f.label "Highest price" %><br/>
+    <%= f.text_field :high_price %>
+  </p>
+  <p>
+    <%= f.label "Lowest price" %><br/>
+    <%= f.text_field :low_price %>
+  </p>  
+  <p>
+    <%= f.label "Percent of government income" %><br/>
+    <%= f.text_field :percent_of_gov_income %> %
+  </p>
+  <hr>
+ <p>
+    <%= f.label "Revenue" %><br/>
+    <%= f.text_field :revenue %> 
+  </p>
+ <p>
+    <%= f.label "Opperational expenses" %><br/>
+    <%= f.text_field :opp_exp %> 
+  </p>
+   <p>
+    <%= f.label "GA expenses" %><br/>
+    <%= f.text_field :ga_exp %> 
+  </p>
+   <p>
+    <%= f.label "Rent" %><br/>
+    <%= f.text_field :rent %> 
+  </p>
+   <p>
+    <%= f.label "Depreciation" %><br/>
+    <%= f.text_field :depreciation %> 
+  </p>
+     <p>
+    <%= f.label "Interest expenses" %><br/>
+    <%= f.text_field :interest_exp %> 
+  </p>
+   <p>
+    <%= f.label "Tax" %><br/>
+    <%= f.text_field :tax %> 
+  </p>
+   <p>
+    <%= f.label "Net Income" %><br/>
+    <%= f.text_field :net_income %> 
+  </p>
+   <p>
+    <%= f.label "Tax rate" %><br/>
+    <%= f.text_field :tax_rate %> %
+  </p>
+  <hr>
+ <p>
+    <%= f.label "Total assets" %><br/>
+    <%= f.text_field :assets %> 
+  </p>
+   <p>
+    <%= f.label "Cash" %><br/>
+    <%= f.text_field :cash %> 
+  </p>
+   <p>
+    <%= f.label "Current assets" %><br/>
+    <%= f.text_field :curr_assets %> 
+  </p>
+   <p>
+    <%= f.label "Goodwill" %><br/>
+    <%= f.text_field :goodwill %> 
+  </p>
+   <p>
+    <%= f.label "Fixed assets" %><br/>
+    <%= f.text_field :fixed_assets %> 
+  </p>
+   <p>
+    <%= f.label "Current liabilities" %><br/>
+    <%= f.text_field :curr_liab %> 
+  </p>
+   <p>
+    <%= f.label "Current debt" %><br/>
+    <%= f.text_field :curr_debt %> 
+  </p>
+   <p>
+    <%= f.label "Long term debt" %><br/>
+    <%= f.text_field :lt_debt %> 
+  </p>
+   <p>
+    <%= f.label "Equity" %><br/>
+    <%= f.text_field :equity %> 
+  </p>
+  <p><%= f.submit "Submit"%></p>
+  <%end%>
