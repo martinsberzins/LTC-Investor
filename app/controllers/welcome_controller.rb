@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
-  require 'nokogiri'
-  require 'open-uri'
+  
 
   def index
     posts = Post.all
