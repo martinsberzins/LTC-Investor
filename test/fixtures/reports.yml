@@ -1,0 +1,65 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quarter: MyString
+  string,: MyString
+  date_of_report: 2014-06-02
+  units: 
+  shares_outstanding: 
+  high_price: 
+  low_price: 
+  percent_of_gov_income: MyString
+  float,: MyString
+  revenue: 
+  opp_exp: 
+  ga_exp: MyString
+  integer,: MyString
+  rent: 
+  depreciation: 
+  interest_exp: MyString
+  integer,: MyString
+  tax: 
+  net_income: 
+  tax_rate: 
+  assets: 
+  cash: 
+  curr_assets: 
+  goodwill: 
+  fixed_assets: 
+  curr_liab: MyString
+  integer,: MyString
+  curr_debt: 
+  lt_debt: 
+  equity: 1
+
+two:
+  quarter: MyString
+  string,: MyString
+  date_of_report: 2014-06-02
+  units: 
+  shares_outstanding: 
+  high_price: 
+  low_price: 
+  percent_of_gov_income: MyString
+  float,: MyString
+  revenue: 
+  opp_exp: 
+  ga_exp: MyString
+  integer,: MyString
+  rent: 
+  depreciation: 
+  interest_exp: MyString
+  integer,: MyString
+  tax: 
+  net_income: 
+  tax_rate: 
+  assets: 
+  cash: 
+  curr_assets: 
+  goodwill: 
+  fixed_assets: 
+  curr_liab: MyString
+  integer,: MyString
+  curr_debt: 
+  lt_debt: 
+  equity: 1

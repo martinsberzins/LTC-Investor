@@ -1,0 +1,111 @@
+
+
+<table class="table table-condensed">
+	<h1> <%= @post.name%> </h1>
+
+	<thead>
+		<tr>
+			<th>Quarter</th>
+			<th><%= @report.quarter%></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Date of report </td>
+			<td><%= @report.date_of_report%></td>
+		</tr>	
+		<tr>
+			<td>Date of report </td>
+			<td><%= @report.date_of_report%></td>
+		</tr>	
+		<tr>
+			<td>Units </td>
+			<td><%= @report.units%></td>
+		</tr>	
+		<tr>
+			<td>Shares outstanding</td>
+			<td><%= @report.shares_outstanding%></td>
+		</tr>	
+		<tr>
+			<td>High price</td>
+			<td><%= @report.high_price%></td>
+		</tr>	
+		<tr>
+			<td>Low price </td>
+			<td><%= @report.low_price%></td>
+		</tr>	
+		<tr>
+			<td>Revenue percent of government income</td>
+			<td><%= @report.percent_of_gov_income%></td>
+		</tr>
+		<tr>
+			<td>Revenue </td>
+			<td><%= @report.revenue%></td>
+		</tr>
+		<tr>
+			<td>Opperating expense </td>
+			<td><%= @report.opp_exp%></td>
+		</tr>
+		<tr>
+			<td>GA expense</td>
+			<td><%= @report.ga_exp%></td>
+		</tr>
+		<tr>
+			<td>Rent </td>
+			<td><%= @report.rent%></td>
+		</tr>
+		<tr>
+			<td>Depreciation</td>
+			<td><%= @report.depreciation%></td>
+		</tr>
+		<tr>
+			<td>Tax</td>
+			<td><%= @report.tax%></td>
+		</tr>
+		<tr>
+			<td>Net income</td>
+			<td><%= @report.net_income%></td>
+		</tr>
+		<tr>
+			<td>Tax rate</td>
+			<td><%= @report.tax_rate%></td>
+		</tr>
+		<tr>
+			<td>Total assets</td>
+			<td><%= @report.assets%></td>
+		</tr>
+		<tr>
+			<td>Cash</td>
+			<td><%= @report.cash%></td>
+		</tr>
+		<tr>
+			<td>Current assets</td>
+			<td><%= @report.curr_assets%></td>
+		</tr>
+		<tr>
+			<td>Goodwill</td>
+			<td><%= @report.goodwill%></td>
+		</tr>
+		<tr>
+			<td>Fixed assets</td>
+			<td><%= @report.fixed_assets%></td>
+		</tr>
+		<tr>
+			<td>Current liabilities</td>
+			<td><%= @report.curr_liab%></td>
+		</tr>
+		<tr>
+			<td>Long term debt</td>
+			<td><%= @report.lt_debt%></td>
+		</tr>
+		<tr>
+			<td>Equity</td>
+			<td><%= @report.equity%></td>
+		</tr>
+	</tbody>
+
+</table>
+<small><%= @report.created_at %> </small>
+
+
+  

@@ -1,0 +1,20 @@
+		<tr>
+			<td><h5>Our model</h5></td>
+			<% @reports.each do |r|%>
+            	<td></td>
+          	<%end%>
+		</tr>
+
+		<tr>
+			<td>Calculated price </td>
+				<% @reports.each_with_index do |r, i|%>
+					<%if i == 0 %>
+						<td class = "allign_right"><%= "NA" %> </td>
+					<% else %>
+						<td class = "allign_right">
+							<%= number_with_precision(our_price(r, @reports[i-1]), precision: 2)%>
+						</td>
+					<% end %>
+				<% end %>
+		</tr>
+	

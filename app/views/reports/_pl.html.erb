@@ -1,0 +1,73 @@
+
+		<tr>
+			<td><h5>P&ampL Statement</h5></td>
+			<% @reports.each do |r|%>
+            	<td></td>
+          	<%end%>
+		</tr>
+
+		<tr>
+			<td>Revenue </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.revenue) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Opperating expenses </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.opp_exp) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>GA expenses</td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.ga_exp) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Rent </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.rent) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Depreciation </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.depreciation) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Interest expenses </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.interest_exp) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Tax </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.tax) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Net income</td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.net_income) %> </td>
+          	<%end%>
+		</tr>
+		<%= render :partial => "seperate"%>
+
+		<!-- EBITDA IS CALCULATED, NOT FROM MODEL-->
+		<tr>
+			<td>EBITDA</td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.revenue - r.opp_exp - r.ga_exp - r.rent) %> </td>
+          	<%end%>
+		</tr>
+			
+		<tr>
+			<td>Tax rate </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_to_percentage(r.tax_rate, precision: 2) %> </td>
+          	<%end%>
+		</tr>
+	

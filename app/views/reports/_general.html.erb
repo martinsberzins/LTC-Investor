@@ -1,0 +1,45 @@
+
+
+		<tr>
+			<th>Quarter</th>
+			<% @reports.each do |r|%>
+            	<th class = "allign_center"><%= r.quarter %> </th>
+          	<%end%>
+		</tr>
+
+		<tr>
+			<td>Date of report </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= r.date_of_report %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Units </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.units) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Shares outstanding </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_delimiter(r.shares_outstanding) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>High price </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_precision(r.high_price, precision: 2) %> </td>
+          	<%end%>
+		</tr>	
+		<tr>
+			<td>Low price </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= number_with_precision(r.low_price, precision: 2) %> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td>Revenue percent of government income</td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_right"><%= if_na(r.percent_of_gov_income) %> </td>
+          	<%end%>
+		</tr>

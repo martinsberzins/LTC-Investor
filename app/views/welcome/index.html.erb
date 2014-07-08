@@ -1,0 +1,20 @@
+<h1>News</h1>
+
+
+<div class = "row">
+	<div class= "col-lg-12">
+		<div id="share_price">
+			<% for i in 0..@titles.length%>
+				<ul id = "ul_no_bullets">
+					<li> <%= link_to(@titles[i].to_s, @links[i].to_s) %> </li>
+					<li> <small><%= @descriptions[i]%></small> </li>
+					<li> <small>Published on: <%= format_date(@pubDate[i])%></small> </li>
+					<hr style="border-top: thin dashed grey" />
+				</ul>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+
+

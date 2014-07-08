@@ -1,0 +1,32 @@
+
+		<tr>
+			<td><h5>Update</h5></td>
+			<% @reports.each do |r|%>
+            	<td></td>
+          	<%end%>
+		</tr>
+
+		<tr>
+			<td><small>Created at</small> </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_center"><small><%= r.created_at %></small> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td><small>Last updated at</small> </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_center"><small><%= r.updated_at %></small> </td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td><small>Edit report</small> </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_center"><small><%= link_to "Edit", edit_post_report_path(@post, r) %></small></td>
+          	<%end%>
+		</tr>
+		<tr>
+			<td><small>Delete report</small> </td>
+			<% @reports.each do |r|%>
+            	<td class = "allign_center"><small><%= link_to "Delete report", [@post, r], :method => :delete, :confirm => "Are you sure?" %></small></td>
+          	<%end%>
+		</tr>
