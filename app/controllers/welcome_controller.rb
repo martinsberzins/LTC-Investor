@@ -9,8 +9,8 @@ class WelcomeController < ApplicationController
       tickers += p.ticker.to_s+"+"
     end
 
-    url = "http://finance.yahoo.com/rss/industry?s="+tickers
-    doc = Nokogiri::XML(open(url))
+    url = Net::HTTP.get(URI.parse "http://finance.yahoo.com/rss/industry?s="+tickers)
+    doc = Nokogiri::XML(url)
     titles_hold = doc.css("item title")
     links_hold = doc.css("item link")
     descriptions_hold = doc.css("item description")
