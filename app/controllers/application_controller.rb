@@ -17,22 +17,28 @@ class ApplicationController < ActionController::Base
   end
 
    def our_price(curr, prev)
-    #variables from current period
-    curr_units = curr.units
-    curr_no_shares = curr.shares_outstanding
-    curr_total_liab = curr.total_liabilities
+    #check if there are the reports
+    if curr.emtpy? or prev.emtpy?
+      curr_our_price = "NA"
+    else  
+      #variables from current period
+      curr_units = curr.units
+      curr_no_shares = curr.shares_outstanding
+      curr_total_liab = curr.total_liabilities
 
-    #variables from previous period to calculate previous eta/units
-    prev_units = prev.units
-    prev_no_shares = prev.shares_outstanding
-    prev_share_price = (prev.high_price+prev.low_price)/2
-    prev_market_cap = prev_no_shares * prev_share_price
-    prev_total_liab = prev.total_liabilities
-    prev_eta = prev_market_cap + prev_total_liab
-    prev_eta_units = prev_eta/prev_units
+      #variables from previous period to calculate previous eta/units
+      prev_units = prev.units
+      prev_no_shares = prev.shares_outstanding
+      prev_share_price = (prev.high_price+prev.low_price)/2
+      prev_market_cap = prev_no_shares * prev_share_price
+      prev_total_liab = prev.total_liabilities
+      prev_eta = prev_market_cap + prev_total_liab
+      prev_eta_units = prev_eta/prev_units
 
-    #our price for current period
-    curr_our_price = (prev_eta_units * curr_units - curr_total_liab)/curr_no_shares
+      #our price for current period
+      curr_our_price = (prev_eta_units * curr_units - curr_total_liab)/curr_no_shares
+    end
+      curr_our_price
   end
 
   def recomendation(post)
