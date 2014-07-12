@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
     price = get_data(ticker, "LastTradePriceOnly")
     reports = post.reports.all.sort_by{|e| e[:quarter]}
     #pagaidu variants, jo bus jaliek NA ari, ja bus tikai viens reports
-    if reports.nil?
+    if reports.empty?
       recomendation = "NA"
     else
       rec = make_recommendation( post.reports.find(reports[- 1].id), post.reports.find(reports[-2].id), price)
