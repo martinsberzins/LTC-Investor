@@ -87,7 +87,7 @@ class ApplicationController < ActionController::Base
   end
 
   def make_recommendation (report, report_prev, market_price)
-    if report.blank? or report_prev.blank? or market_price.blank?
+    if report.empty? or report_prev.empty? or market_price.empty?
       recomendation = "NA"
     else
       market_price = market_price.to_f
