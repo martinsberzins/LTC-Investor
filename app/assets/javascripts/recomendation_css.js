@@ -12,9 +12,12 @@ ready = function(){
 	} else if (span_text == "Sell (too risky)"){
 		color = "#F28B24";
 		text = "S (TR)"
-	} else {
+	} else if (span_text == "Hold)"){
 		color = "#F2DA24";
 		text = "H"
+	}  else{
+		color = "#F2DA24";
+		text = "NA"
 	}
 
 	text = "<span>"+text+"</span>";
