@@ -87,26 +87,30 @@ class ApplicationController < ActionController::Base
   end
 
   def make_recommendation (report, report_prev, market_price)
-    market_price = market_price.to_f
-    our_price = our_price(report, report_prev)
-    pain_treshold = 0.3
-    hold_value = 0.03*our_price
-    too_high = market_price*(1+pain_treshold)
-    too_low = market_price*(1-pain_treshold)
-    recomendation = ""
-
-    #decision making tree
-    #case1: our price above MP, but too high -> sell, because too high risk
-    if too_high < our_price 
-      recomendation = "Sell (too risky)"
-    #case2: OP between MP and too hign price -> buy
-    elsif market_price < our_price && our_price < too_high
-      recomendation = "Buy"
-    #case3: OP in hold range -> hold
-    elsif market_price - hold_value < our_price && our_price < market_price + hold_value
-      recomendation = "Hold"
+    if report.empty? or report_prev.empty?
+      recomendation = "NA"
     else
-      recomendation = "Sell"
+      market_price = market_price.to_f
+      our_price = our_price(report, report_prev)
+      pain_treshold = 0.3
+      hold_value = 0.03*our_price
+      too_high = market_price*(1+pain_treshold)
+      too_low = market_price*(1-pain_treshold)
+      recomendation = ""
+
+      #decision making tree
+      #case1: our price above MP, but too high -> sell, because too high risk
+      if too_high < our_price 
+        recomendation = "Sell (too risky)"
+      #case2: OP between MP and too hign price -> buy
+      elsif market_price < our_price && our_price < too_high
+        recomendation = "Buy"
+      #case3: OP in hold range -> hold
+      elsif market_price - hold_value < our_price && our_price < market_price + hold_value
+        recomendation = "Hold"
+      else
+        recomendation = "Sell"
+      end
     end
     #return
     recomendation
