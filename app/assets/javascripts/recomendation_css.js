@@ -15,8 +15,8 @@ ready = function(){
 	} else if (span_text == "Hold)"){
 		color = "#F2DA24";
 		text = "H"
-	}  else{
-		color = "#F2DA24";
+	}  else {
+		color = "#C4C4C4";
 		text = "NA"
 	}
 
