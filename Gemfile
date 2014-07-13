@@ -52,6 +52,9 @@ gem "gon"
 #DEVISE for managing users
 gem "devise"
 
+#This gem will configure your application to serve static assets so that you do not need to do this manually in a config file.
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
