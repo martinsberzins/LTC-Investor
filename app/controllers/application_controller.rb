@@ -18,9 +18,9 @@ class ApplicationController < ActionController::Base
 
    def our_price(curr, prev)
     #check if there are the reports
-    if curr.emtpy? or prev.emtpy?
-      curr_our_price = "NA"
-    else  
+    #if curr.emtpy? or prev.emtpy?
+    #  curr_our_price = "NA"
+    #else  
       #variables from current period
       curr_units = curr.units
       curr_no_shares = curr.shares_outstanding
@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
 
       #our price for current period
       curr_our_price = (prev_eta_units * curr_units - curr_total_liab)/curr_no_shares
-    end
+    #end
       curr_our_price
   end
 
@@ -51,12 +51,12 @@ class ApplicationController < ActionController::Base
     price = get_data(ticker, "LastTradePriceOnly")
     reports = post.reports.all.sort_by{|e| e[:quarter]}
     #pagaidu variants, jo bus jaliek NA ari, ja bus tikai viens reports
-    if reports.empty?
-      recomendation = "NA"
-    else
+    #if reports.empty?
+    #  recomendation = "NA"
+    #else
       rec = make_recommendation( post.reports.find(reports[- 1].id), post.reports.find(reports[-2].id), price)
       recomendation = short_rec[rec]
-    end
+    #end
     recomendation
   end
 
@@ -87,9 +87,9 @@ class ApplicationController < ActionController::Base
   end
 
   def make_recommendation (report, report_prev, market_price)
-    if report.empty? or report_prev.empty? or market_price.empty?
-      recomendation = "NA"
-    else
+    #if report.empty? or report_prev.empty? or market_price.empty?
+    #  recomendation = "NA"
+    #else
       market_price = market_price.to_f
       our_price = our_price(report, report_prev)
       pain_treshold = 0.3
@@ -111,7 +111,7 @@ class ApplicationController < ActionController::Base
       else
         recomendation = "Sell"
       end
-    end
+    #end
     #return
     recomendation
   end
