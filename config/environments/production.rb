@@ -76,5 +76,10 @@ Project::Application.configure do
   # config.autoflush_log = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  config.log_formatter = ::Logger::Formatter.
+
+  #for confirmation emails
+  config.action_mailer.default_url_options = { :host => 'ltc-investor.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
 end
