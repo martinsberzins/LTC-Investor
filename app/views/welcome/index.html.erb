@@ -1,10 +1,10 @@
 <h1>News</h1>
-
+ 
 
 <div class = "row">
 	<div class= "col-lg-12">
 		<div id="share_price">
-			<% for i in 0..@titles.length%>
+			<% for i in 0..(@titles.lengt-1)%>
 				<ul id = "ul_no_bullets">
 					<li> <%= link_to(@titles[i].to_s, @links[i].to_s) %> </li>
 					<li> <small><%= @descriptions[i]%></small> </li>
