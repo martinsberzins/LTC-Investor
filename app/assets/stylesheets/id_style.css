@@ -1,5 +1,9 @@
 /* GENERAL*/
 
+body {
+  background-color: #EDEDED;
+}
+
 p, h1, h2, h3, h4, h5, a{
   font-weight: 300;
 }
@@ -88,7 +92,7 @@ p, h1, h2, h3, h4, h5, a{
 }
 
 .navbar{
-  background-color: white;
+  background-color: #EDEDED;
 }
 
 .nav_bar_a{
