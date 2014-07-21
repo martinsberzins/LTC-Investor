@@ -89,5 +89,5 @@ class PostsController < ApplicationController
   
   
 
-  helper_method :our_price, :recomendation, :get_data, :trim_namespace, :make_recommendation
+  helper_method :our_price, :recomendation, :get_data, :trim_namespace, :make_recommendation, :recommendation_class
 end

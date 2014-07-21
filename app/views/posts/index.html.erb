@@ -1,29 +1,20 @@
 
-<% @posts.each do |post|  %>
-<div class="row" id = "posts_index_div">
-  <div class="col-lg-8" id="posts_index_div_nested">
-    <h2 class = "h2_conmpany_name"><%= link_to post.name, post %> </h2>
-    <h4 class = "h4_ticker">Ticker: <%= post.ticker %> </h4>
-    <p class = "p_region">Region: <%= post.region %> </p>
+<div class="row">
+  <% @posts.each do |post|  %>
+    <%= link_to post do %>
+      <div class="col-lg-4 col-xs-6 posts_index_div">
+         <div class="posts_index_inside_div">
+           <span class="posts_index_helper"><%= post.ticker%></span>
+           <div class = <%=recommendation_class(post) %>></div>
+         </div>
+         <div class="posts_index_hover_div">
+          <span class="posts_index_helper"><%= post.name%></span>
+         </div>
+      </div>
+      
+    <%end%>
+ <% end %>
   </div>
-  <div class="col-lg-1 div_recomendation_color_index">
-    <span><%= recomendation(post) %></span>
-  </div>
-  <div class="col-lg-3" id="posts_img_div_nested">
-    <span class="helper"></span><%= image_tag(post.ticker+".jpg", class: "company_logo",  :alt => post.ticker) %>
-  </div>
-    <hr />
- </div>
- <div class = "row">
-  <div class = "col-lg-12" id = "posts_div_index_edit_delete">
-    <p>
-      <%= link_to "Edit" , edit_post_path(post), class: "posts_a"%> |
-      <%= link_to "Delete" , post, :confirm => "Are you sure?", :method => :delete, class: "posts_a"%>
-    </p>
-  </div>  
-</div>
- <hr>
-<% end %>
 
 <div class="row" id="div_add_new">
   <p><%=link_to "Add New Company", new_post_path%></p>

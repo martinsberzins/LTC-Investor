@@ -6,37 +6,7 @@ body {
 
 p, h1, h2, h3, h4, h5, a{
   font-weight: 300;
-}
-
-/* VIEW POSTS INDEX*/
-
-#posts_index_div_nested{
-	border-style:none;
-	border-color:red;
-}
-
-#posts_img_div_nested{
-	border-style:none;
-	border-color:yellow;
-  height: 120px;
-  text-align: center
-}
-
-#posts_div_index_edit_delete{
-  border-style:none;
-  border-color:yellow;
-}
-.company_logo{
-  max-width: 100px;
-  vertical-align: middle
-}
-
-
-.helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
+} 
 
 .allign_right{
   text-align: right
@@ -74,21 +44,6 @@ p, h1, h2, h3, h4, h5, a{
 
 .h2_conmpany_name a{
   color: black;
-}
-
-.h2_conmpany_name a:hover{
-  color: #777777;
-  text-decoration: none;
-}
-
-.posts_a {
-  color: black;
-}
-
-.posts_a:hover
-{ 
-  color:#777777;
-  text-decoration: none;
 }
 
 .navbar{
