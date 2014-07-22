@@ -2,12 +2,12 @@
 <div class="row">
   <% @posts.each do |post|  %>
     <%= link_to post do %>
-      <div class="col-lg-4 col-xs-6 posts_index_div">
+      <div class="col-lg-4 col-xs-6 posts_index_div" id = <%=post.ticker%>>
          <div class="posts_index_inside_div">
            <span class="posts_index_helper"><%= post.ticker%></span>
-           <div class = <%=recommendation_class(post) %>></div>
+           <div class = <%=recommendation_class(post) %>> </div>
          </div>
-         <div class="posts_index_hover_div">
+         <div class="posts_index_hover_div" id = <%=post.ticker%>>
           <span class="posts_index_helper"><%= post.name%></span>
          </div>
       </div>
