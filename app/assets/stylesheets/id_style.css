@@ -8,6 +8,16 @@ p, h1, h2, h3, h4, h5, a{
   font-weight: 300;
 } 
 
+a {
+  color: #363635;
+}
+
+a:hover{
+  color:#777777; 
+  text-decoration: none;
+}
+
+
 .allign_right{
   text-align: right
 }
