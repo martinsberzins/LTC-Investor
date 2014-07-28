@@ -31,15 +31,8 @@ class PostsController < ApplicationController
 
     #RECOMENDATION
     @reports = @posts.reports.all.sort_by{|e| e[:quarter]}
-    if @reports.blank?
-      recomendation = "NA"
-      our_price = "NA"
-    else
-      recomendation = make_recommendation(@posts.reports.find(@reports[- 1].id), @posts.reports.find(@reports[-2].id), @price) 
-      our_price = our_price(@posts.reports.find(@reports[- 1].id), @posts.reports.find(@reports[-2].id))
-    end
-    @recomendation = recomendation
-    @our_price = our_price
+    @recomendation = make_recommendation(@posts.reports.find(@reports[- 1].id), @posts.reports.find(@reports[-2].id), @price) 
+    @our_price = our_price(@posts.reports.find(@reports[- 1].id), @posts.reports.find(@reports[-2].id))
   end
   
   def new
@@ -89,5 +82,5 @@ class PostsController < ApplicationController
   
   
 
-  helper_method :our_price, :recomendation, :get_data, :trim_namespace, :make_recommendation, :recommendation_class
+  helper_method :our_price, :recomendation, :get_data, :trim_namespace, :make_recommendation
 end

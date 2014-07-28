@@ -64,11 +64,9 @@
               <%= link_to "Sign In", new_user_session_path , class: "nav_bar_a"%>
               <%end%>
             </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="nav_bar_li ">
+            <li class="nav_bar_li">
               <% if user_signed_in? %>
-              <p style = "margin-top: 10px">Hi, <%= link_to current_user.username, edit_user_registration_path, class: "nav_bar_a"%> </p> 
+              <%= link_to "Profile", edit_user_registration_path, class: "nav_bar_a"%>
               <%end%>
             </li>
           </ul>
@@ -77,7 +75,6 @@
     </div>
 
     <div class="container">
-      <!--view -->
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>

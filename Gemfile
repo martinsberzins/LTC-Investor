@@ -4,13 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 # Use PostgreSQL as the database for Active Record
-group :production do
-  gem 'pg'
-end
-
-group :development, :test do
-  gem 'sqlite3'
-end
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -51,9 +45,6 @@ gem "gon"
 
 #DEVISE for managing users
 gem "devise"
-
-#This gem will configure your application to serve static assets so that you do not need to do this manually in a config file.
-gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
